@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شات صدى العراق</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="logo">شات صدى العراق</div>
+</header>
+
+<div class="content">
+  <h1>مرحباً بك في شات صدى العراق</h1>
+  <p class="desc">
+    اكتسب المزيد من الأصدقاء الآن من خلال<br>
+    خدمتنا المبتكرة للدردشة. تتمتع برؤية<br>
+    أحبائك وأصدقائك في أي وقت. نتمنى<br>
+    لك أوقات سعيدة برفقتنا.
+  </p>
+
+  <button class="btn">تسجيل عضوية</button>
+  <button class="btn" id="openLogin">دخول بعضوية</button>
+  <button class="btn">دخول زائر</button>
+
+  <h2>عزيزي الزائر</h2>
+  <p class="desc small">
+    يمكنك الدخول كزائر بدون تسجيل عضوية<br>
+    ويمكنك أيضًا تسجيل عضوية لدينا كي تتمكن<br>
+    من استخدام جميع الخدمات والمزايا المتوفرة لدينا
+  </p>
+</div>
+
+<!-- نافذة الدخول -->
+<div class="overlay" id="loginModal">
+  <div class="modal">
+    <span class="close" id="closeLogin">×</span>
+
+    <h3>الدخول بعضوية مسجلة</h3>
+    <p class="note">من فضلك، أدخل اسمك أو عنوان بريدك الإلكتروني.</p>
+
+    <form id="loginForm">
+      <input type="text" id="user" placeholder="اسم المستخدم / البريد الإلكتروني" required>
+      <div class="password-box">
+        <input type="password" id="password" placeholder="كلمة المرور" required>
+        <span class="eye">👁</span>
+      </div>
+      <button class="btn full" type="submit">دخول</button>
+    </form>
+
+    <a href="#" class="forgot">نسيت كلمة المرور ؟</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
